@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+TimeCombo.where(time: "morning").first_or_create
+TimeCombo.where(time: "noon").first_or_create
+TimeCombo.where(time: "night").first_or_create
+TimeCombo.where(time: "morning noon").first_or_create
+TimeCombo.where(time: "morning night").first_or_create
+TimeCombo.where(time: "noon night").first_or_create
+TimeCombo.where(time: "morning noon night").first_or_create
+
