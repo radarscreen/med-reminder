@@ -1,56 +1,43 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  root :to => 'site#login'
+  get 'site/about', to: 'site#about'
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  resources :users , shallow: true do
+    resources :clients do
+      resources :medicines 
+    end
+  end
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+# for twilio
+  # post 'twilio/voice', to: 'twilio#voice'
+  # post 'notifications/notify', to: 'notifications#notify'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+# Prefix Verb   URI Pattern                                 Controller#Action
+#                root GET    /                                           site#login
+#          site_about GET    /site/about(.:format)                       site#about
+#    client_medicines GET    /clients/:client_id/medicines(.:format)     medicines#index
+#                     POST   /clients/:client_id/medicines(.:format)     medicines#create
+# new_client_medicine GET    /clients/:client_id/medicines/new(.:format) medicines#new
+#       edit_medicine GET    /medicines/:id/edit(.:format)               medicines#edit
+#            medicine GET    /medicines/:id(.:format)                    medicines#show
+#                     PATCH  /medicines/:id(.:format)                    medicines#update
+#                     PUT    /medicines/:id(.:format)                    medicines#update
+#                     DELETE /medicines/:id(.:format)                    medicines#destroy
+#        user_clients GET    /users/:user_id/clients(.:format)           clients#index
+#                     POST   /users/:user_id/clients(.:format)           clients#create
+#     new_user_client GET    /users/:user_id/clients/new(.:format)       clients#new
+#         edit_client GET    /clients/:id/edit(.:format)                 clients#edit
+#              client GET    /clients/:id(.:format)                      clients#show
+#                     PATCH  /clients/:id(.:format)                      clients#update
+#                     PUT    /clients/:id(.:format)                      clients#update
+#                     DELETE /clients/:id(.:format)                      clients#destroy
+#               users GET    /users(.:format)                            users#index
+#                     POST   /users(.:format)                            users#create
+#            new_user GET    /users/new(.:format)                        users#new
+#           edit_user GET    /users/:id/edit(.:format)                   users#edit
+#                user GET    /users/:id(.:format)                        users#show
+#                     PATCH  /users/:id(.:format)                        users#update
+#                     PUT    /users/:id(.:format)                        users#update
+#                     DELETE /users/:id(.:format)                        users#destroy
 end
