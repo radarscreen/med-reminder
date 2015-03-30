@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root :to => 'site#login'
   get 'site/about', to: 'site#about'
 
-  resources :users , shallow: true do
-    resources :clients do
-      resources :medicines 
+  resources :users do
+    resources :clients, shallow: true do
+      resources :medicines, shallow: true
     end
   end
 
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # post 'twilio/voice', to: 'twilio#voice'
   # post 'notifications/notify', to: 'notifications#notify'
 
-# Prefix Verb   URI Pattern                                 Controller#Action
+#              Prefix Verb   URI Pattern                                 Controller#Action
 #                root GET    /                                           site#login
 #          site_about GET    /site/about(.:format)                       site#about
 #    client_medicines GET    /clients/:client_id/medicines(.:format)     medicines#index

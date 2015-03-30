@@ -1,6 +1,7 @@
 class SiteController < ApplicationController
 
-	def index
+	def login
+		@users = User.new
 	end
 
 	def about
