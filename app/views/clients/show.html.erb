@@ -18,10 +18,10 @@
 <%= button_to "Delete", client_path(@client), :method => :delete  %>
 <br>
 <br>
-<%= link_to "View all my clients", user_clients_path(@client.user.id) %>
+<%= link_to "View all my clients", user_clients_path(@client.id) %>
 <br>
 <br>
-<%= link_to "Add another client", new_user_client_path(@client.user.id) %>
+<%= link_to "Add another client", new_user_client_path(@client.id) %>
 <br>
 <br>
 <%= link_to "Sign Out", logout_path, :method => :delete %>

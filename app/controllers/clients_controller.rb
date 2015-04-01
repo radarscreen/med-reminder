@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   def index
-    @user = User.find_by_id params[:user_id]
+    @user = User.find_by_id session[:user_id]
     @clients = @user.clients
   end
 
@@ -14,9 +14,10 @@ class ClientsController < ApplicationController
   end
 
   def show
-    @client = Client.find_by_id params[:id]
-    @user = @client.user
-    @user = User.find_by_id params[:user_id]
+    @user = User.find_by_id session[:user_id]
+    @client = Client.find_by_id params[:client_id]
+    # @user = @client.user
+    @client = @user.client
   end
 
   def create
@@ -52,6 +53,6 @@ class ClientsController < ApplicationController
 
   private
   def client_params
-    params.require(:client).permit(:name, :relationship, :phone_number, :user_id) 
+    params.require(:client).permit(:id, :name, :relationship, :phone_number, :user_id) 
   end
 end
