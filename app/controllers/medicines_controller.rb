@@ -2,7 +2,7 @@ class MedicinesController < ApplicationController
   def index
     @client = Client.find_by_id params[:client_id]
     @medicines = @client.medicines
-    @client = @medicines
+    # @client = @medicines
   end
 
   def new
@@ -18,7 +18,7 @@ class MedicinesController < ApplicationController
   def show
     @medicine = Medicine.find_by_id params[:id]
     @client = @medicine.client
-    @client = Client.find_by_id params[:client_id]
+    # @client = Client.find_by_id params[:client_id]
     # @medicine.client = @client
     # @medicine = Medicine.all
   end

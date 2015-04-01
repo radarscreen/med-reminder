@@ -6,10 +6,14 @@
 # Example:
 #
 # set :output, "/path/to/my/cron_log.log"
+
+	##is this where i would set the output to twilio?
+	##how do i integrate whenever/cron with twilio?
+	##dynamically changing schedules...updated scheds? 
 #
 # every 2.hours do
-#   command "/usr/bin/some_great_command"
-#   runner "MyModel.some_method"
+#   command "/usr/bin/whenever -i"
+#   runner "MyModel.some_method(629386295) or (user.phone_number)??"
 #   rake "some:great:rake:task"
 # end
 #
