@@ -1,2 +1,16 @@
-<h1>Clients#edit</h1>
-<p>Find me in app/views/clients/edit.html.erb</p>
+<h1>Update Your Client's Info</h1>
+
+<%= form_for @client do |f|%>
+
+	<%= f.label :client %>
+	<%= f.text_field :name, placeholder: "Full Name", autofocus: true %>
+	<%= f.label :phone_number %>
+	<%= f.text_field :phone_number, placeholder: "Phone Number" %>
+
+	<%= f.label :relationship_to_client %>
+	<%= f.select :relationship, [['self', 'self'], ['family', 'family'], ['company', 'company']] %>
+
+	<%= f.submit("Submit") %>
+<% end %>
+<br>
+<%= link_to "Back to Client's Info Page", client_path(@client) %>

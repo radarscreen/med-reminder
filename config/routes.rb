@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  root :to => 'site#login'
+  # root.redirect '/', :controller  => 'users', :action => 'login'
+  root :to => 'users#login'
   get 'site/about', to: 'site#about'
+  get '/login', to: "users#login", as: 'login'
+  post '/login', to: "users#attempt_login"
+  delete '/logout', to: "users#logout", as: "logout"
+  #logs out a user
 
   resources :users do
     resources :clients, shallow: true do
@@ -12,10 +17,9 @@ Rails.application.routes.draw do
 # for twilio
   # post 'twilio/voice', to: 'twilio#voice'
   # post 'notifications/notify', to: 'notifications#notify'
-
-#              Prefix Verb   URI Pattern                                 Controller#Action
-#                root GET    /                                           site#login
+#                root GET    /                                           users#login
 #          site_about GET    /site/about(.:format)                       site#about
+#              logout DELETE /logout(.:format)                           users#logout
 #    client_medicines GET    /clients/:client_id/medicines(.:format)     medicines#index
 #                     POST   /clients/:client_id/medicines(.:format)     medicines#create
 # new_client_medicine GET    /clients/:client_id/medicines/new(.:format) medicines#new
@@ -40,4 +44,5 @@ Rails.application.routes.draw do
 #                     PATCH  /users/:id(.:format)                        users#update
 #                     PUT    /users/:id(.:format)                        users#update
 #                     DELETE /users/:id(.:format)                        users#destroy
+
 end

@@ -1,2 +1,20 @@
-<h1>Clients#new</h1>
-<p>Find me in app/views/clients/new.html.erb</p>
+<h1>Add your client's information:</h1>
+
+
+<%= form_for([@user, @client], url: user_clients_path) do |f|%>
+
+	<%= f.label :client %>
+	<%= f.text_field :name, placeholder: "Full Name", autofocus: true %>
+	<%= f.label :phone_number %>
+	<%= f.text_field :phone_number, placeholder: "Phone Number" %>
+
+	<%= f.label :relationship_to_client %>
+	<%= f.select :relationship, [['self', 'self'], ['family', 'family'], ['company', 'company']] %>
+
+	<%= f.submit("Submit") %>
+<% end %>
+
+
+<%= link_to "Sign Out", logout_path, :method => :delete %>
+
+

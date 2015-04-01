@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 #whenever gem
-
+gem 'better_errors'
+gem 'binding_of_caller'
 #whenever is managing time. Sidekiq runs background jobs. congruent path but not dependent. sidekiq is like the boss that determines what happens and who is doing what. 
 #Redis is what determines that a job has been completed or has yet to be run. It is a queue. Redis stores all the jobs that are going to happen. 
 #Twilio is the background job that I want to execute for the text to the caregiver. Inside of the sidekiq job just happens to be Twilio.  

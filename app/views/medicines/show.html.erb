@@ -1,2 +1,20 @@
-<h1>Medicines#show</h1>
-<p>Find me in app/views/medicines/show.html.erb</p>
+<h1>Med's Info:</h1>
+
+<p>Medicine Name: <%= @medicine.name %></p>
+
+<p>Description: <%= @medicine.description %></p>
+
+<p>Start Time: <%= @medicine.start_time %></p>
+
+<p>Quantity: <%= @medicine.quantity %></p>
+
+<p>Frequency: <%=  @medicine.frequency %></p>
+<br>
+<br>
+<%= link_to "Edit Medicine", edit_medicine_path %>
+<br>
+<br>
+<%= button_to "Delete", medicine_path(@medicine), :method => :delete  %>
+<br>
+<br>
+<%= link_to "Back to Medicine List", client_medicines_path(@client) %>

@@ -4,11 +4,11 @@
 
 
 <h3>Sign in:</h3>
-<%= form_for @users do |f|%>
+<%= form_tag(login_path) do |f|%>
 
 	<%= f.text_field :username, placeholder: "Email", autofocus: true %>
 	<%= f.text_field :password, placeholder: "Password" %>
-
+	<%= binding.pry %>
 	<%= f.submit("Sign in") %>
 	
 <% end %>
@@ -16,4 +16,4 @@
 <%= link_to "Don't have an account? Create one!", new_user_path %>
 <br>
 <br>
-<%= link_to "About Med Reminder", 'site/about' %>
+<%= link_to "About Med Reminder", site_about_path %>

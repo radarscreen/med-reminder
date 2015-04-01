@@ -1,2 +1,30 @@
-<h1>Clients#show</h1>
-<p>Find me in app/views/clients/show.html.erb</p>
+<h1>Your Specific Client:</h1>
+
+<%= @client.name %>
+<br>
+<br>
+<%= @client.relationship %>
+<br>
+<br>
+<%= @client.phone_number %>
+<br>
+<br>
+<%= link_to "Edit Client", edit_client_path %>
+<br>
+<br>
+<%= link_to "Add Client's Meds", new_client_medicine_path(@client) %>
+<br>
+<br>
+<%= button_to "Delete", client_path(@client), :method => :delete  %>
+<br>
+<br>
+<%= link_to "View all my clients", user_clients_path(@client.user.id) %>
+<br>
+<br>
+<%= link_to "Add another client", new_user_client_path(@client.user.id) %>
+<br>
+<br>
+<%= link_to "Sign Out", logout_path, :method => :delete %>
+
+
+
