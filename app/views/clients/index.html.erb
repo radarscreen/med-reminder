@@ -1,23 +1,26 @@
+<div class="center">
 <h1>Here are your clients:</h1>
+</div>
 
+<div class="center">
 <% @clients.each do |client| %>
 
 	<li><%= link_to client.name, client_path(client) %></li>
 	
 <% end %>
+</div>
 
- <br>
-
+<div class="center">
 <%= link_to "Add a client", new_user_client_path %>
+</div>
 
-<br>
-<br>
+<div class="center">
 <%= link_to "Sign Out", logout_path, :method => :delete %>
+</div>
 
-<br>
-<br>
+<div class="center">
 <%= link_to "About Med Reminder", site_about_path %>
-
+</div>
 
 
 

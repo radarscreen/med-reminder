@@ -1,29 +1,33 @@
+<div class="center">
 <h1><%= @client.name %></h1>
-
-
+</div>
+<div class="center">
 <h3>Relationship: <%= @client.relationship %></h3>
 
-<br>
 <h3>Contact Number: <%= @client.phone_number %></h3>
-
-<br>
+</div>
+<div class="center">
 <%= link_to "Edit Client's Information", edit_client_path %>
-<br>
-<br>
+</div>
+
+<div class="center">
 <%= link_to "View Client's Meds", client_medicines_path(@client.id) %>
-<br>
+</div>
 
-<br>
+<div class="center">
 <%= button_to "Delete #{@client.name}", client_path(@client), :method => :delete  %>
-<br>
-<br>
-<%= link_to "View all my clients", user_clients_path(@client.id) %>
-<br>
-<br>
-<%= link_to "Add another client", new_user_client_path(@client.id) %>
-<br>
-<br>
-<%= link_to "Sign Out", logout_path, :method => :delete %>
+</div>
 
+<div class="center">
+<%= link_to "View all my clients", user_clients_path(@client.id) %>
+</div>
+
+<div class="center">
+<%= link_to "Add another client", new_user_client_path(@client.id) %>
+</div>
+
+<div class="center">
+<%= link_to "Sign Out", logout_path, :method => :delete %>
+</div>
 
 

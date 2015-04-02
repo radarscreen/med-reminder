@@ -1,13 +1,16 @@
+<div class="center">
 <h1>List of Client's Medicines:</h1>
-
+</div>
+<div class="center">
 <% @medicines.each do |medicine| %>
 
 <li><%= link_to medicine.name, medicine_path(medicine) %></li>
 
 <% end %>
-<br>
+</div>
+<div class="center">
 <%= link_to "Add Client's Meds", new_client_medicine_path(@client) %>
-<br>
-<br>
+</div>
+<div class="center">
 <%= link_to "Back to Client's Profile", client_path(@client) %>
-
+</div>

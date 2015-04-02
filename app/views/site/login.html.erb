@@ -1,6 +1,8 @@
+<div class="center">
 <h1>Welcome to Med Reminder!</h1>
+</div>
 
-
+<div class="center">
 <h3>Sign In:</h3>
 <%= form_tag(login_path) do |f|%>
 
@@ -10,8 +12,10 @@
 	<%= f.submit("Sign in") %>
 	
 <% end %>
-<br>
+</div>
+<div class="center">
 <%= link_to "Don't have an account? Create one!", new_user_path %>
-<br>
-<br>
+</div>
+<div class="center">
 <%= link_to "About Med Reminder", site_about_path %>
+</div>

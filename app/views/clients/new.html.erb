@@ -1,6 +1,7 @@
+<div class="center">
 <h1>Add your client's information:</h1>
-
-
+</div>
+<div class="center border">
 <%= form_for([@user, @client], url: user_clients_path) do |f|%>
 
 	<%= f.label :client %>
@@ -14,10 +15,9 @@
 
 	<%= f.submit("Submit") %>
 <% end %>
-<br>
+</div>
 <!-- link_to "Back to my clients", user_clients_path(@client.id) %> -->
-<br>
-<br>
+<div class="center">
 <%= link_to "Sign Out", logout_path, :method => :delete %>
-
+</div>
 

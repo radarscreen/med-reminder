@@ -1,5 +1,7 @@
+<div class="center">
 <h1>Update Your Client's Info</h1>
-
+</div>
+<div class="center border">
 <%= form_for @client do |f|%>
 
 	<%= f.label :client %>
@@ -12,5 +14,7 @@
 
 	<%= f.submit("Submit") %>
 <% end %>
-<br>
+</div>
+<div class="center">
 <%= link_to "Back to Client's Info Page", client_path(@client) %>
+</div>
