@@ -1,21 +1,20 @@
-<h1>Your Specific Client:</h1>
+<h1><%= @client.name %></h1>
 
-<%= @client.name %>
+
+<h3>Relationship: <%= @client.relationship %></h3>
+
+<br>
+<h3>Contact Number: <%= @client.phone_number %></h3>
+
+<br>
+<%= link_to "Edit Client's Information", edit_client_path %>
 <br>
 <br>
-<%= @client.relationship %>
+<%= link_to "View Client's Meds", client_medicines_path(@client.id) %>
 <br>
+
 <br>
-<%= @client.phone_number %>
-<br>
-<br>
-<%= link_to "Edit Client", edit_client_path %>
-<br>
-<br>
-<%= link_to "Add Client's Meds", new_client_medicine_path(@client) %>
-<br>
-<br>
-<%= button_to "Delete", client_path(@client), :method => :delete  %>
+<%= button_to "Delete #{@client.name}", client_path(@client), :method => :delete  %>
 <br>
 <br>
 <%= link_to "View all my clients", user_clients_path(@client.id) %>

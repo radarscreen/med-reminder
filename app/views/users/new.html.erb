@@ -1,10 +1,10 @@
-<h3>Sign up:</h3>
+<h3>User Sign Up:</h3>
 
 <%= form_for @user do |f|%>
 
 	<%= f.text_field :name, placeholder: "Full name", autofocus: true %>
 	<%= f.text_field :username, placeholder: "Email" %>
-	<%= f.text_field :password, placeholder: "Password" %>
+	<%= f.password_field :password, placeholder: "Password" %>
 
 	<%= f.submit("Submit") %>
 	

@@ -5,16 +5,19 @@
 
 	<%= f.label :client %>
 	<%= f.text_field :name, placeholder: "Full Name", autofocus: true %>
+
 	<%= f.label :phone_number %>
-	<%= f.text_field :phone_number, placeholder: "Phone Number" %>
+	<%= f.text_field :phone_number, placeholder: "ie: (888) 888-8888" %>
 
 	<%= f.label :relationship_to_client %>
-	<%= f.select :relationship, [['self', 'self'], ['family', 'family'], ['company', 'company']] %>
+	<%= f.select :relationship, [['Client', 'Client'], ['Family', 'Family'], ['Friend', 'Friend'], ['Self', 'Self']] %>
 
 	<%= f.submit("Submit") %>
 <% end %>
-
-
+<br>
+<!-- link_to "Back to my clients", user_clients_path(@client.id) %> -->
+<br>
+<br>
 <%= link_to "Sign Out", logout_path, :method => :delete %>
 
 
