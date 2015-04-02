@@ -25,7 +25,14 @@ class MedicinesController < ApplicationController
 
   def create
     @client = Client.find_by_id params[:client_id]
-    @medicine = Medicine.new medicine_params
+    @medicine = Medicine.new medicine_params.merge({ "frequency" => medicine_params["frequency"].to_i })
+    #should this be cut and pasted into the sidekiq workers file in the perform method?
+    #MedicineSchedule.perform_async(@medicine.id)
+    #OR does this need to stay in the create action
+    #because  how else what the medicine itself be 
+    #created and rendered to the page?
+    #check out Sidekiq's wiki for more features re: scheduling
+    #ie. perform_async v perform_in(1.hour)
     @medicine.client = @client
     @medicine.save
     redirect_to client_medicines_path(@client)

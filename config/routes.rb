@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
+  # require 'sidekiq/web'
 
 # for twilio
   # post 'twilio/voice', to: 'twilio#voice'

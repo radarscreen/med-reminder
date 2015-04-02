@@ -12,3 +12,26 @@ h1{
 li {
 	color: red;
 }
+
+div#about {
+	background: url("http://michaelczinkota.com/wp-content/uploads/2014/04/old-people.jpg");
+position: absolute;
+}
+// positioning: absolute vs relative
+
+// absolute is based off the dom..give it two more parameters top 10 px right 10px
+// even if this div is nested within parent divs, absolute will remove it and append it to the dom
+// removes it from that flow
+
+// normally when you have a n object it is relative to its parents div
+// default is relative...relative to its parents
+// **everything is relative to the body...the body is just an explicit body tag
+
+// high contrast of text and larger fonts
+// everything should be either exactly the same or drastically different
+
+// to target about page has a super div that is 100% of the height and width of the body
+//body {
+//     background-image: url("paper.gif");
+//     background-color: #cccccc;
+// }  COVER
