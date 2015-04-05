@@ -17,7 +17,7 @@
 <% end %>
 </div>
 <!-- link_to "Back to my clients", user_clients_path(@client.id) %> -->
-<div class="center">
-<%= link_to "Sign Out", logout_path, :method => :delete %>
+<div class="center", id="signout">
+<%= button_to "Sign Out", logout_path, :method => :delete %>
 </div>
 

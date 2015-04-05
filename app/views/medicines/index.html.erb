@@ -1,7 +1,7 @@
 <div class="center">
 <h1>List of Client's Medicines:</h1>
 </div>
-<div class="center">
+<div class="center form border">
 <% @medicines.each do |medicine| %>
 
 <li><%= link_to medicine.name, medicine_path(medicine) %></li>

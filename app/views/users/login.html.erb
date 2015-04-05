@@ -1,19 +1,22 @@
-<h1>Med Reminder</h1>
+<div class="center">
+<h1>Welcome to Med Reminder!</h1>
+</div>
 
 
-
-
+<div class="center form border">
 <h3>Sign in:</h3>
 <%= form_tag login_path do |f|%>
 
 	<%= text_field_tag :username, nil, placeholder: "Email", autofocus: true %>
 	<%= password_field_tag :password, nil, placeholder: "Password" %>
 	
-	<%= submit_tag("Sign in") %>
+	<%= submit_tag("Sign In") %>
 	
 <% end %>
-<br>
+</div>
+<div class="center">
 <%= link_to "Don't have an account? Create one!", new_user_path %>
 <br>
 <br>
 <%= link_to "About Med Reminder", site_about_path %>
+</div>
