@@ -11,7 +11,9 @@
 	<%= f.text_area :description, placeholder: "ie. Little white pill bottle labeled 'Ashwagandha' in the cabinet to the left of the stove" %>
 
 	<%= f.label :frequency %>
-	<%= f.select :frequency, [['hourly', 'hourly'], ['every two hours', 'every two hours'], ['every three hours', 'every three hours'], ['every four hours', 'every four hours'], ['every five hours', 'every five hours'],['three times a day', 'three times a day'], ['twice a day', 'twice a day'], ['daily', 'daily'], ['every other day', 'every other day'], ['every three days', 'every three days'], ['weekly', 'weekly'], ['bi-weekly', 'bi-weekly'], ['monthly', 'monthly']] %>
+<!-- 	<%= f.select :frequency, [['hourly', 'hourly'], ['every two hours', 'every two hours'], ['every three hours', 'every three hours'], ['every four hours', 'every four hours'], ['every five hours', 'every five hours'],['three times a day', 'three times a day'], ['twice a day', 'twice a day'], ['daily', 'daily'], ['every other day', 'every other day'], ['every three days', 'every three days'], ['weekly', 'weekly'], ['bi-weekly', 'bi-weekly'], ['monthly', 'monthly']] %> -->
+
+	<%= f.select :frequency, [['every minute', 60], ['hourly', 3600], ['every two hours', 7200], ['every three hours',10800], ['every four hours',14400], ['every five hours',18000],['three times a day',28800], ['twice a day', 43200], ['daily', 86400]] %>
 
 	<%= f.label :quantity %>
 	<%= f.select :quantity, [['1 oz', '1 oz'], ['2 oz', '2 oz'], ['3 oz', '3 oz'], ['4 oz', '4 oz'], ['5 oz', '5 oz'], ['6 oz', '6 oz'], ['7 oz', '7 oz'], ['8 oz', '8 oz'], ['9 oz', '9 oz'], ['10 oz', '10 oz'], ['1 pill', '1 pill'], ['2 pills', '2 pills'], ['3 pills', '3 pills'], ['4 pills', '4 pills'], ['5 pills', '5 pills'], ['6 pills', '6 pills'], ['7 pills', '7 pills'], ['8 pills', '8 pills'], ['9 pills', '9 pills'], ['10 pills', '10 pills']] %>
